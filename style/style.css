@@ -1,0 +1,931 @@
+@import url(./normalize.css);
+@import url(./reset.css);
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+
+html {
+  width: 100%;
+}
+
+body {
+  background-color: rgb(30, 35, 41);
+}
+
+.container {
+  /* max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  background-color: red; */
+}
+
+.header {
+  width: 810px;
+  height: 56px;
+  position: fixed;
+  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px;
+  background-color: #374151e6;
+  border-radius: 0.75rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.header-mobile {
+  display: none;
+}
+
+.mobile-menu {
+  display: none; /* скрыто по умолчанию */
+}
+
+.header nav {
+  width: 100%;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s;
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 6px 12px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+}
+
+.nav-list li a.active {
+  color: #c2410c;
+  background-color: #f1f5f9;
+  padding: 6px 12px;
+  border-radius: 7px;
+}
+
+.nav-list li a:hover {
+  color: #fb923c;
+  background-color: transparent;
+  border: 1px solid #fb923c;
+}
+
+.wrapper-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  position: absolute;
+  top: 50%;
+  left: 9%;
+  transform: translateY(-50%);
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  padding-top: 11px;
+  /* background-image: url("../assets/images/background.webp"); */
+  background-image: url("../assets/images/back.jpeg");
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  position: relative;
+  width: 155px;
+  height: 96px;
+  margin-left: 11px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(0, 0%, 100%, 0.8);
+  border-radius: 0.75rem;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+.logo__text {
+  position: absolute;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-family: "Rubik Dirt", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #ea580c;
+}
+
+.title-block {
+  width: 607px;
+  height: 212px;
+  border-left: 4px solid #ea580c;
+}
+
+.title-card {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin-left: 16px;
+  background-color: #451a0399;
+  border-radius: 1rem;
+  color: white;
+  font-size: 37px;
+  font-family: "Rubik Dirt", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.bold {
+  font-size: 55px;
+}
+
+.connection {
+  display: flex;
+  height: 304px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button-connection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #00000066;
+}
+
+.icon-connection {
+  width: 40x;
+  height: 40px;
+  color: white;
+}
+
+.advantages {
+  display: flex;
+  justify-content: center;
+  /* width: 80vw; */
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 3.75rem;
+  font-family: "Rubik Dirt", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #b45309;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 32px;
+}
+
+.advantage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 389px;
+  height: 200px;
+}
+
+.advantage-subtitle {
+  font-size: 30px;
+  font-family: "Amatic SC", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  color: #ea580c;
+  margin: 16px 0 0;
+  text-align: center;
+}
+
+.advantage-text {
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  margin: 16px 0 0;
+  font-size: 18px;
+  font-weight: 200;
+  text-align: center;
+  line-height: 1.75rem;
+  color: #a6adbb;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.wrapper-products {
+}
+
+.product-card {
+  display: flex;
+  gap: 30px;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 624px;
+  height: 450px;
+}
+
+.product-info__text {
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  margin: 16px 0 0;
+  font-size: 20px;
+  font-weight: 200;
+  text-align: justify;
+  line-height: 1.75rem;
+  color: #a6adbb;
+}
+
+.product-image {
+  width: 624px;
+  height: 450px;
+  border-radius: 35px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.list {
+  list-style: none;
+  margin-top: 10px;
+  text-indent: 35px;
+}
+
+.list li {
+  position: relative;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.list li::before {
+  content: "•";
+  position: absolute;
+  left: -20px;
+  top: 7px;
+  color: #ea580c;
+  font-size: 24px;
+  line-height: 18px;
+}
+
+.samples {
+}
+
+.wrapper-samples {
+}
+
+.gallery {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-card {
+  position: relative;
+  width: 400px;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Увеличение картинки */
+.gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+/* overlay затемнение */
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s;
+  flex-direction: column;
+}
+
+/* Появление overlay */
+.gallery-card:hover .gallery-card-overlay {
+  opacity: 1;
+}
+
+/* текст */
+.gallery-card-text {
+  color: white;
+  font-size: 22px;
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.4s;
+}
+
+/* Плавное увеличение текста */
+.gallery-card:hover .gallery-card-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* кнопка закрытия */
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 48px;
+  color: #ea580c;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-close:hover {
+  color: #ea580c;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Убираем масштабирование картинки для portfolio-card */
+.portfolio-card img {
+  transition: none; /* отключаем увеличение */
+  transform: none !important; /* на всякий случай */
+}
+
+/* overlay всегда виден для portfolio-card */
+.portfolio-card .gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5); /* белый с прозрачностью */
+  backdrop-filter: blur(5px); /* легкий блюр */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* всегда виден */
+}
+
+/* кнопка */
+.portfolio-btn {
+  margin-top: 10px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 400;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: #c2410c;
+  color: white;
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+}
+
+.portfolio-btn:hover {
+  background-color: #fb923c;
+}
+
+.portfolio-text {
+  font-family: "Amatic SC", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 36px;
+  color: #111827;
+  font-weight: 700;
+  /* background: none; */
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 168px;
+  background-color: #2a323c;
+  margin-top: 80px;
+}
+
+.footer-left {
+  display: flex;
+  width: 290px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  display: flex;
+  position: relative;
+  width: 155px;
+  height: 96px;
+  margin-left: 11px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo img {
+  width: 100px;
+  height: auto;
+}
+
+.footer-left__txt {
+  text-align: center;
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+  color: #a6adbb;
+}
+
+.footer-left__txt span {
+  line-height: 1.5;
+}
+
+.txt--large {
+  font-size: 18px;
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  width: 448px;
+  text-align: center;
+}
+
+.center--title {
+  font-family: "Amatic SC", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 24px;
+  color: #f97316;
+  font-weight: 700;
+}
+
+.center--subtitle {
+  margin-top: 10px;
+  font-family: "Amatic SC", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 20px;
+  color: #a6adbb;
+  font-weight: 400;
+}
+
+.footer-right {
+  width: 280px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* кнопка скрыта по умолчанию */
+.show-more-btn {
+  display: none;
+  margin-top: 12px;
+  padding: 10px 18px;
+  font-size: 16px;
+  background-color: #ea580c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.show-more-btn:hover {
+  background-color: #fb923c;
+}
+
+/* МОДАЛКА */
+.modal-text {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.modal-text-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: rgb(30, 35, 41);
+  border-radius: 12px;
+  overflow-y: auto;
+  font-size: 18px;
+  line-height: 1.5;
+  animation: zoom 0.3s ease;
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  margin: 16px 0 0;
+  font-size: 20px;
+  font-weight: 200;
+  text-align: center;
+  line-height: 1.75rem;
+  color: #a6adbb;
+}
+
+.close-text-modal {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  font-size: 40px;
+  color: #ea580c;
+  cursor: pointer;
+}
+
+.burger {
+  display: none; /* скрываем на больших экранах */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.price-mobile {
+  display: none;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.text {
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 20px;
+  font-weight: 200;
+  color: #a6adbb;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-indent: 30px;
+  text-align: justify;
+}
+
+.text-price {
+  font-size: 24px;
+  color: #f97316;
+  font-weight: 500;
+}
+
+@media (max-width: 1350px) {
+  .product-card {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .product-card {
+    align-items: center;
+  }
+
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    width: 454px;
+    height: 280px;
+  }
+
+  .product-image {
+    width: 454px;
+    height: 280px;
+  }
+
+  .product-info__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .show-more-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 18px;
+    font-size: 16px;
+    background-color: #ea580c;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+      Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: 200;
+    text-align: justify;
+    line-height: 1.75rem;
+    color: white;
+  }
+}
+
+@media (max-width: 1159px) {
+  .logo {
+    margin: 70px auto;
+  }
+}
+
+@media (max-width: 892px) {
+  .logo__text-footer {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 875px) {
+  .connection {
+    display: none;
+  }
+
+  .wrapper-main {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 840px) {
+  .header {
+    display: none;
+  }
+
+  .price-mobile {
+    display: block;
+  }
+
+  .product-info {
+    width: 454px;
+    height: 180px;
+  }
+
+  .header-mobile {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px;
+    background-color: #374151e6;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .product-card {
+    flex-direction: column;
+  }
+
+  .product-card:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+
+  .product-card:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .burger-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    display: none; /* скрыто по умолчанию */
+    position: fixed;
+    inset: 0; /* сверху, снизу, слева, справа = 0 */
+    background-color: rgb(30, 35, 41);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+      Consolas, "Liberation Mono", "Courier New", monospace;
+    margin: 16px 0 0;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1.75rem;
+    color: #a6adbb;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-nav-list li {
+    margin: 20px 0;
+  }
+
+  .mobile-nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 780px) {
+  .footer {
+    height: 100%;
+    gap: 50px;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .footer-center {
+    width: 100%;
+  }
+}
+
+@media (max-width: 770px) {
+  .title-block {
+    height: 180px;
+  }
+
+  .title-card {
+    font-size: 30px;
+  }
+
+  .bold {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 610px) {
+  .title-block {
+    height: 160px;
+  }
+
+  .title-card {
+    font-size: 27px;
+  }
+
+  .bold {
+    font-size: 39px;
+  }
+}
+
+@media (max-width: 555px) {
+  .title-block {
+    height: 150px;
+  }
+
+  .title-card {
+    font-size: 23px;
+  }
+
+  .bold {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 520px) {
+  .wrapper-advantages {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 39px;
+  }
+
+  .wrapper-products {
+    width: 100%;
+  }
+
+  .product-info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 475px) {
+  .title-block {
+    height: 120px;
+  }
+
+  .title-card {
+    font-size: 19px;
+  }
+
+  .bold {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .title-block {
+    height: 100px;
+  }
+
+  .title-card {
+    font-size: 15px;
+  }
+
+  .bold {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 315px) {
+  .title {
+    font-size: 29px;
+  }
+
+  .title-block {
+    height: 120px;
+  }
+
+  .title-card {
+    font-size: 15px;
+  }
+
+  .bold {
+    font-size: 20px;
+  }
+}

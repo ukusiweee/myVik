@@ -1,0 +1,392 @@
+@import url(./normalize.css);
+@import url(./reset.css);
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+
+body {
+  background-color: rgb(30, 35, 41);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  width: 810px;
+  height: 56px;
+  position: fixed;
+  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px;
+  background-color: #374151e6;
+  border-radius: 0.75rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.header nav {
+  width: 100%;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s;
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 6px 12px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+}
+
+.nav-list li a.active {
+  color: #c2410c;
+  background-color: #f1f5f9;
+  padding: 6px 12px;
+  border-radius: 7px;
+}
+
+.nav-list li a:hover {
+  color: #fb923c;
+  background-color: transparent;
+  border: 1px solid #fb923c;
+}
+
+.logo__text {
+  position: absolute;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-family: "Rubik Dirt", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #ea580c;
+}
+
+.icon-connection {
+  width: 40x;
+  height: 40px;
+  color: white;
+}
+
+.main {
+  width: 90vw;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.title {
+  text-align: center;
+  font-size: 3.75rem;
+  font-family: "Rubik Dirt", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #b45309;
+  margin-top: 150px;
+  margin-bottom: 80px;
+}
+
+.gallery {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-card {
+  position: relative;
+  width: 400px;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Увеличение картинки */
+.gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+/* overlay затемнение */
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s;
+  flex-direction: column;
+}
+
+/* Появление overlay */
+.gallery-card:hover .gallery-card-overlay {
+  opacity: 1;
+}
+
+/* текст */
+.gallery-card-text {
+  color: white;
+  font-size: 22px;
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.4s;
+}
+
+/* Плавное увеличение текста */
+.gallery-card:hover .gallery-card-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* кнопка закрытия */
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 48px;
+  color: #ea580c;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 168px;
+  background-color: #2a323c;
+  margin-top: 80px;
+}
+
+.footer-left {
+  display: flex;
+  width: 290px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  display: flex;
+  position: relative;
+  width: 155px;
+  height: 96px;
+  margin-left: 11px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo img {
+  width: 100px;
+  height: auto;
+}
+
+.footer-left__txt {
+  text-align: center;
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+  color: #a6adbb;
+}
+
+.footer-left__txt span {
+  line-height: 1.5;
+}
+
+.txt--large {
+  font-size: 18px;
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  width: 448px;
+  text-align: center;
+}
+
+.center--title {
+  font-family: "Amatic SC", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 24px;
+  color: #f97316;
+  font-weight: 700;
+}
+
+.center--subtitle {
+  margin-top: 10px;
+  font-family: "Amatic SC", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 20px;
+  color: #a6adbb;
+  font-weight: 400;
+}
+
+.footer-right {
+  width: 280px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-mobile {
+  display: none;
+}
+
+.mobile-menu {
+  display: none; /* скрыто по умолчанию */
+}
+
+@media (max-width: 892px) {
+  .logo__text-footer {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 840px) {
+  .header {
+    display: none;
+  }
+
+  .header-mobile {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px;
+    background-color: #374151e6;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .burger-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    display: none; /* скрыто по умолчанию */
+    position: fixed;
+    inset: 0; /* сверху, снизу, слева, справа = 0 */
+    background-color: rgb(30, 35, 41);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+      Consolas, "Liberation Mono", "Courier New", monospace;
+    margin: 16px 0 0;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1.75rem;
+    color: #a6adbb;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-nav-list li {
+    margin: 20px 0;
+  }
+
+  .mobile-nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 780px) {
+  .footer {
+    height: 100%;
+    gap: 50px;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .footer-center {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 35px;
+  }
+}
